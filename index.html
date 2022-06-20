@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flute Repair Calculator</title>
+</head>
+
+<body>
+
+    <h1>Repair Calculator</h1>
+
+    <form id="repair-form">
+        <h2>Pick all that apply:</h2>
+
+        <p>Instrument:</p>
+        <input type="radio" id="flute" name="instrument" value="flute">
+        <label for="flute">Flute</label><br>
+
+        <input type="radio" id="piccolo" name="instrument" value="piccolo">
+        <label for="piccolo">Piccolo</label><br>
+
+        <input type="radio" id="low" name="instrument" value="low">
+        <label for="low">Low Flute</label>
+
+        <p>Level:</p>
+        <input type="radio" id="level-1" name="level" value="1">
+        <label for="1">Level 1</label><br>
+        
+        <input type="radio" id="level-2" name="level" value="2">
+        <label for="2">Level 2</label><br>
+        
+        <input type="radio" id="level-3" name="level" value="3">
+        <label for="3">Level 3</label>
+<br>
+        <input type="radio" id="level-low" name="level" value="low">
+        <label for="low">Low flute</label><br>
+
+        <p>Service:</p>
+        <input type="radio" id="full-coa" name="service" value="full-coa">
+        <label for="full-coa">Full COA</label><br>
+
+        <input type="radio" id="partial-coa" name="service" value="partial-coa">
+        <label for="partial-coa">Partial COA</label><br>
+
+        <input type="radio" id="repad" name="service" value="repad">
+        <label for="repad">Repad</label><br>
+
+        <input type="radio" id="overhaul" name="service" value="overhaul">
+        <label for="overhaul">Overhaul</label><br>
+<br>
+        <label for="pad">Number of pads replaced:</label>
+        <input type="number" id="pad" name="pad" min="0" value="0">
+<br>
+        <label for="adjustment">Number of adjustment papers/materials modified or replaced:</label>
+        <input type="number" id="adjustment" name="adjustment" min="0" value="0">
+        <br>
+        <label for="shopRate">Number of hours at shop rate:</label>
+        <input type="number" id="shopRate" name="shopRate" min="0" step="0.25" value="0">
+<br>
+<br>
+        <div>
+            <input type="checkbox" id="straubConversion" name="straubConversion">
+            <label for="straubConversion">Add conversion to Straubinger pads</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="emergencyFee" name="emergencyFee">
+            <label for="emergencyFee">Add emergency fee</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="headjointCork" name="headjointCork">
+            <label for="headjointCork">Add standalone headjoint cork</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="donut" name="donut">
+            <label for="donut">Add high E facilitator installation</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="caseRepair" name="caseRepair">
+            <label for="caseRepair">Add case repair base rate</label>
+        </div>
+
+
+        <button>Calculate</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script src="prices.js"></script>
+    <script src="calc.js"></script>
+</body>
+
+</html>
