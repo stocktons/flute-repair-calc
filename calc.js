@@ -132,9 +132,9 @@ function displayResult(total) {
 
     let resultDiv = document.getElementById("results")
     resultDiv.innerHTML = 
-        `<div class="my-3 alert alert-success display-6">` +
-        `$${total}` +
-        `</div>`
+        `<div class="my-3 alert alert-secondary display-6">
+        $${total}
+        </div>`
 }
 
 function disableChoices() {
