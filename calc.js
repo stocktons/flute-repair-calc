@@ -39,7 +39,7 @@ function handleSubmit(evt) {
     let adjEstimate = calculateAdjustments(numAdjs);
     let hoursEstimate = calculateShopHours(shopHours);
     let addOns = calculateAddOns(isStraubConversion, isEmergencyFee, isHeadjointCork, isDonut, isCaseRepair);
-    
+
     displayResult(serviceCost + padEstimate + adjEstimate + hoursEstimate + addOns);
 }
 
@@ -109,7 +109,7 @@ function getServiceCost(inst, service, lvl) {
  * calculates pad replacement cost.
  * 
  */
- function calculatePads(qty, inst, lvl) {
+function calculatePads(qty, inst, lvl) {
     console.log("calculatePads", qty, inst, lvl)
     if (!inst || !lvl) { return 0 }
 
@@ -129,9 +129,12 @@ function calculateShopHours(hours) {
 
 function displayResult(total) {
     console.log("displayResult", total)
-    
-    let resultDiv = document.getElementById("results") 
-    resultDiv.innerHTML = total
+
+    let resultDiv = document.getElementById("results")
+    resultDiv.innerHTML = 
+        `<div class="my-3 alert alert-success display-6">` +
+        `$${total}` +
+        `</div>`
 }
 
 function disableChoices() {
@@ -144,17 +147,17 @@ function disableChoices() {
     const l3 = document.getElementById("level-3")
     const ll = document.getElementById("level-low")
 
-    if (piccolo.checked === true || low.checked === true) { 
+    if (piccolo.checked === true || low.checked === true) {
         console.log("piccolo or low checked")
         repadButton.disabled = true;
         repadButton.checked = false;
     };
 
     if (low.checked === true) {
-            l1.disabled = true;
-            l2.disabled = true;
-            l3.disabled = true;
-            ll.checked = true;
+        l1.disabled = true;
+        l2.disabled = true;
+        l3.disabled = true;
+        ll.checked = true;
     }
 
     if (flute.checked === true || piccolo.checked === true) {
@@ -174,8 +177,8 @@ function enableChoices() {
     const l3 = document.getElementById("level-3")
     const ll = document.getElementById("level-low")
 
-    if (flute.checked === true) { 
-        repadButton.disabled = false 
+    if (flute.checked === true) {
+        repadButton.disabled = false
     };
 
     if (flute.checked === true || piccolo.checked === true) {
@@ -184,17 +187,17 @@ function enableChoices() {
         l3.disabled = false;
     }
 
-    if (low.checked === true) { 
+    if (low.checked === true) {
         ll.disabled = false
     }
 }
 
 
 document.getElementById("repair-form").addEventListener("submit", handleSubmit);
-document.getElementById("piccolo").addEventListener("click", disableChoices) 
-document.getElementById("piccolo").addEventListener("click", enableChoices) 
-document.getElementById("low").addEventListener("click", disableChoices) 
-document.getElementById("low").addEventListener("click", enableChoices) 
-document.getElementById("flute").addEventListener("click", disableChoices) 
-document.getElementById("flute").addEventListener("click", enableChoices) 
+document.getElementById("piccolo").addEventListener("click", disableChoices)
+document.getElementById("piccolo").addEventListener("click", enableChoices)
+document.getElementById("low").addEventListener("click", disableChoices)
+document.getElementById("low").addEventListener("click", enableChoices)
+document.getElementById("flute").addEventListener("click", disableChoices)
+document.getElementById("flute").addEventListener("click", enableChoices)
 
